@@ -1,5 +1,6 @@
 package com.vincentreinbold.firstmod;
 
+import com.vincentreinbold.firstmod.block.ModBlocks;
 import com.vincentreinbold.firstmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -37,6 +38,7 @@ public class FirstMod
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

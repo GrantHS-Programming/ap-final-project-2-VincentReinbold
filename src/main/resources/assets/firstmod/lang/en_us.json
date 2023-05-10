@@ -1,3 +1,6 @@
 {
-  "item.firstmod.amethyst": "Amethyst"
+  "item.firstmod.amethyst": "Amethyst",
+  "block.firstmod.amethyst_ore": "Amethyst Ore",
+
+  "itemGroup.Firstmodtab": "First Mod"
 }
