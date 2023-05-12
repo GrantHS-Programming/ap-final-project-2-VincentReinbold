@@ -1,6 +1,7 @@
 package com.vincentreinbold.firstmod.item;
 
 import com.vincentreinbold.firstmod.FirstMod;
+import com.vincentreinbold.firstmod.item.custom.Firestone;
 import net.minecraft.client.tutorial.Tutorial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,6 +17,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> AMETHYST = ITEMS.register("amethyst",
             () -> new Item(new Item.Properties().group(ModItemGroup.FIRST_GROUP)));
+
+    public static final RegistryObject<Item> FIRESTONE = ITEMS.register("firestone",
+            () -> new Firestone(new Item.Properties().group(ModItemGroup.FIRST_GROUP).maxDamage(8)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
