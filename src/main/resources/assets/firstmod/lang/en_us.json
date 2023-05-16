@@ -1,6 +1,8 @@
 {
   "item.firstmod.amethyst": "Amethyst",
   "block.firstmod.amethyst_ore": "Amethyst Ore",
-
-  "itemGroup.Firstmodtab": "First Mod"
+  "block.firstmod.firestone_block": "Firestone Block",
+  "itemGroup.Firstmodtab": "First Mod",
+  "tooltip.firstmod.firestone": "Hold shift for more Information",
+  "tooltip.firstmod.firestone_shift": "Might set you on fire but also might protect you."
 }

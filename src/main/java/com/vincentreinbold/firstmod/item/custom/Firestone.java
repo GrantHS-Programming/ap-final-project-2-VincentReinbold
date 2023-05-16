@@ -5,6 +5,8 @@ import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CampfireBlock;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -18,9 +20,13 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.NoteBlockEvent;
 
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Objects;
 
 public class Firestone extends Item {
@@ -40,6 +46,22 @@ public class Firestone extends Item {
             stack.damageItem(1, playerEntity, player -> player.sendBreakAnimation(context.getHand()));
         }
         return super.onItemUseFirst(stack, context);
+    }
+
+    @Override
+    public void addInformation(ItemStack p_77624_1_, @Nullable World p_77624_2_, List<ITextComponent> p_77624_3_, ITooltipFlag p_77624_4_) {
+
+        if(Screen.hasShiftDown()) {
+            p_77624_3_.add(new TranslationTextComponent("tooltip.firstmod.firestone_shift"));
+        }
+        else {
+            p_77624_3_.add(new TranslationTextComponent("tooltip.firstmod.firestone"));
+        }
+
+
+
+
+        super.addInformation(p_77624_1_, p_77624_2_, p_77624_3_, p_77624_4_);
     }
 
     private void rightClickOnCertianBlockState(BlockState clickedBlock, ItemUseContext context,
