@@ -2,13 +2,12 @@ package com.vincentreinbold.firstmod.block;
 
 import com.vincentreinbold.firstmod.FirstMod;
 import com.vincentreinbold.firstmod.block.custom.FirestoneBlock;
+import com.vincentreinbold.firstmod.block.custom.trees.RedwoodTree;
 import com.vincentreinbold.firstmod.item.ModItemGroup;
 import com.vincentreinbold.firstmod.item.ModItems;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.trees.OakTree;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
@@ -44,11 +43,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_REDWOOD_WOOD = registerBlock("stripped_redwood_wood",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
 
-    public static final RegistryObject<Block> REDWOOD_PLANK = registerBlock("redwood_plank",
+    public static final RegistryObject<Block> REDWOOD_PLANKS = registerBlock("redwood_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 
+    public static final RegistryObject<Block> REDWOOD_LEAVES = registerBlock("redwood_leaves",
+            () -> new Block(AbstractBlock.Properties.create(Material.LEAVES).
+                    hardnessAndResistance(0.2f).tickRandomly().
+                    sound(SoundType.PLANT).notSolid()));
 
-    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+    public static final RegistryObject<Block> REDWOOD_SAPLING = registerBlock("redwood_sapling",
+            () -> new SaplingBlock(new RedwoodTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING)));
+
+
+    private static <T extends Block>RegistryObject<T> registerBlock(String   name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
 
         registerBlockItem(name, toReturn);

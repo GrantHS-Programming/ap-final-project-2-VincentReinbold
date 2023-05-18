@@ -2,6 +2,8 @@
   "item.firstmod.amethyst": "Amethyst",
   "block.firstmod.amethyst_ore": "Amethyst Ore",
   "block.firstmod.firestone_block": "Firestone Block",
+  "block.firstmod.redwood_planks":"Redwood Planks",
+  "block.firstmod.redwood_log":"Redwood Log",
   "itemGroup.Firstmodtab": "First Mod",
   "tooltip.firstmod.firestone": "Hold shift for more Information",
   "tooltip.firstmod.firestone_shift": "Might set you on fire but also might protect you."
