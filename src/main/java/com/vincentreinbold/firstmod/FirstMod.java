@@ -1,6 +1,7 @@
 package com.vincentreinbold.firstmod;
 
 import com.vincentreinbold.firstmod.block.ModBlocks;
+import com.vincentreinbold.firstmod.entities.custom.ModEntityTypes;
 import com.vincentreinbold.firstmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -52,6 +53,8 @@ public class FirstMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModEntityTypes.register(eventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event)
