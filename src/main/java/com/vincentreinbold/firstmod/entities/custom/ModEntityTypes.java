@@ -20,7 +20,7 @@ public class ModEntityTypes {
             ENTITY_TYPES.register("buff_zombie",
                     () -> EntityType.Builder.create(BuffZombieEntity::new, EntityClassification.MONSTER)
                             .size(1f,3f).build(new ResourceLocation(FirstMod.MOD_ID,
-                                    "buff zombie").toString()));
+                                    "buff_zombie").toString()));
 
  //   public static final RegistryObject<EntityType<PigeonEntity>> PIGEON =
    //         ENTITY_TYPES.register("pigeon",
